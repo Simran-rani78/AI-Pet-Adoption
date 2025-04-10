@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PetBot 🐶</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gray-100 flex flex-col h-screen">
+  <nav class="bg-pink-600 p-4">
+    <div class="container mx-auto flex justify-between">
+      <h1 class="text-white text-2xl">PetBot</h1>
+      <div>
+        <a href="#suggestions" class="text-white hover:text-pink-200 mx-2">Pet Suggestions</a>
+        <a href="#chat-section" class="text-white hover:text-pink-200 mx-2">Chat</a>
+      </div>
+    </div>
+  </nav>
+  <div class="flex-grow flex items-center justify-center m-8 min-h-[60vh]" id="chat-wrapper">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-lg h-full" id="chat-section">
+      <h2 class="text-center text-3xl text-pink-600 mb-4">🐾 PetBot</h2>
+      <div id="chat" class="h-72 overflow-y-auto border border-gray-300 p-2 mb-4 rounded-lg">
+        <div class="text-pink-500">🤖 PetBot: Hello! Ask me anything about pets!</div>
+      </div>
+      <div class="input-area">
+        <input type="text" id="userInput" placeholder="Type your question..."
+               class="border border-gray-300 rounded-lg p-2 w-full sm:w-4/5"
+               onkeydown="if(event.key==='Enter') sendMessage()" />
+        <button onclick="sendMessage()"
+                class="bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-600 transition">Send</button>
+        <button onclick="endChat()"
+                class="bg-red-400 text-white rounded-lg px-4 py-2 hover:bg-red-600 transition">End Chat</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="suggestions" class="bg-white p-6 rounded-lg shadow-lg mx-4 mb-2">
+    <h2 class="text-center text-2xl text-pink-600 mb-2">🐾 Pet Suggestions</h2>
+    <div class="flex space-x-4 overflow-x-auto snap-x scroll-smooth px-2">
+      <div class="border rounded-lg overflow-hidden min-w-[250px] snap-center shrink-0">
+        <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cat" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Cats</h3>
+          <p>Perfect for small spaces and independent living.</p>
+        </div>
+      </div>
+      <div class="border rounded-lg overflow-hidden min-w-[250px] snap-center shrink-0">
+        <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dog" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Dogs</h3>
+          <p>Loyal companions that love to play and exercise.</p>
+        </div>
+      </div>
+      <div class="border rounded-lg overflow-hidden min-w-[250px] snap-center shrink-0">
+        <img src="https://images.pexels.com/photos/1228439/pexels-photo-1228439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Rabbit" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Rabbits</h3>
+          <p>Great for families and can be litter trained.</p>
+        </div>
+      </div>
+      <div class="border rounded-lg overflow-hidden min-w-[250px] snap-center shrink-0">
+        <img src="https://images.pexels.com/photos/56733/pexels-photo-56733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Parrot" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Parrot</h3>
+          <p>Colorful and clever pets that love to mimic sounds and enjoy social interaction.</p>
+        </div>
+      </div>
+      <div class="border rounded-lg overflow-hidden min-w-[250px] snap-center shrink-0">
+        <img src="https://images.pexels.com/photos/30371415/pexels-photo-30371415/free-photo-of-clownfish-swimming-in-a-vibrant-aquarium.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Fish" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Fish</h3>
+          <p>Peaceful and low-maintenance pets that bring calm and beauty to any space.</p>
+        </div>
+      </div>
+      <div class="border rounded-lg overflow-hidden min-w-[250px] snap-center shrink-0">
+        <img src="https://images.pexels.com/photos/793235/pexels-photo-793235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Horse" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">Horse</h3>
+          <p>Strong and intelligent companions, ideal for open spaces and active lifestyles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-pink-600 text-white text-center py-4">
+    <p>Created by Simran Rani / 12317008 & Abhishek Pandey / 12312235</p>
+  </footer>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
