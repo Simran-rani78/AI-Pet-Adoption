@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PetBot - Your AI Pet Advisor
 
 A web-based chatbot that provides advice about pets, adoption, and care tips using Google's Gemini AI.
@@ -48,3 +49,6 @@ petbot/
 
 - Simran Rani (12317008)
 - Abhishek Pandey (12312235) 
+=======
+# AI-Pet-Adoptions
+>>>>>>> 529d75f09fbb9446adb57f05179f31300fe23044
